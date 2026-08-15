@@ -46,53 +46,61 @@ export default function Header() {
         </div>
 
         {/* Main Navbar Wrapper */}
-        <div className={`w-full px-2 sm:px-4 lg:px-8 transition-all duration-300 ${isScrolled ? 'pt-2 sm:pt-3' : 'pt-2 sm:pt-4'}`}>
-          <div className={`max-w-[1400px] mx-auto bg-white/95 backdrop-blur-md transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full border border-white/60 flex items-center justify-between ${isScrolled ? 'py-1 sm:py-2 px-4 sm:px-6' : 'py-1.5 sm:py-2.5 px-4 sm:px-8'}`}>
-            
-            {/* Logo */}
-            <Link
-              href="/"
-              className="text-lg sm:text-xl md:text-2xl font-black text-secondary flex items-center gap-2"
-            >
-              <Image src="/logo1.jpeg" alt="Turiatraven Logo" width={64} height={64} className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full shadow-md object-cover border-2 border-white" />
-              <div><span className="text-primary">Turia</span>traven</div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-6">
-              {navLinks.map((link) => {
-                const Icon = link.icon;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm font-medium text-secondary hover:text-primary transition-colors flex items-center gap-2"
-                  >
-                    <Icon size={16} className="text-primary" />
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            {/* Desktop Action Buttons (Removed) */}
-            <div className="hidden lg:flex items-center gap-3">
+        <div className={`w-full transition-all duration-300 ${isScrolled ? 'px-2 sm:px-4 lg:px-8 pt-2 sm:pt-3' : 'px-0 pt-0'}`}>
+          <div className={`mx-auto bg-white/95 backdrop-blur-md transition-all duration-300 ${
+            isScrolled 
+              ? 'max-w-[1400px] shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full border border-white/60' 
+              : 'w-full shadow-sm border-b border-gray-100'
+          }`}>
+            <div className={`mx-auto max-w-[1400px] flex items-center justify-between ${
+              isScrolled ? 'py-1 sm:py-2 px-4 sm:px-6' : 'py-1.5 sm:py-2.5 px-4 lg:px-8'
+            }`}>
+              
+              {/* Logo */}
               <Link
-                href="#plan"
-                className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"
+                href="/"
+                className="text-lg sm:text-xl md:text-2xl font-black text-secondary flex items-center gap-2"
               >
-                Plan My Journey
+                <Image src="/logo1.jpeg" alt="Turiatraven Logo" width={64} height={64} className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full shadow-md object-cover border-2 border-white" />
+                <div><span className="text-primary">Turia</span>traven</div>
               </Link>
-            </div>
 
-            {/* Mobile Toggle */}
-            <button
-              className="lg:hidden p-2 text-secondary"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              {/* Desktop Navigation */}
+              <nav className="hidden lg:flex items-center gap-6">
+                {navLinks.map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-sm font-medium text-secondary hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      <Icon size={16} className="text-primary" />
+                      {link.name}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Desktop Action Buttons (Removed) */}
+              <div className="hidden lg:flex items-center gap-3">
+                <Link
+                  href="#plan"
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors shadow-md shadow-primary/20"
+                >
+                  Plan My Journey
+                </Link>
+              </div>
+
+              {/* Mobile Toggle */}
+              <button
+                className="lg:hidden p-2 text-secondary"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
