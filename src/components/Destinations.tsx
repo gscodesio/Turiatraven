@@ -9,14 +9,12 @@ import { MapPin } from "lucide-react";
 const categories = ["All", "Asia", "Africa", "Indian Ocean", "Europe", "Oceania"];
 
 const destinations = [
-  { id: "kenya", name: "Kenya", region: "Africa", image: "/kenya.jpg" },
-  { id: "bali", name: "Bali", region: "Asia", image: "/bali.jpg" },
-  { id: "mauritius", name: "Mauritius", region: "Indian Ocean", image: "/hero.jpg" },
-  { id: "vietnam", name: "Vietnam", region: "Asia", image: "/kenya.jpg" },
+  { id: "kenya-safari", name: "Kenya", region: "Africa", image: "/kenya.jpg" },
+  { id: "bali-escapade", name: "Bali", region: "Asia", image: "/bali.jpg" },
   { id: "south-africa", name: "South Africa", region: "Africa", image: "/hero.jpg" },
-  { id: "australia", name: "Australia", region: "Oceania", image: "/bali.jpg" },
-  { id: "italy", name: "Italy", region: "Europe", image: "/hero.jpg" },
-  { id: "switzerland", name: "Switzerland", region: "Europe", image: "/bali.jpg" },
+  { id: "sri-lanka", name: "Sri Lanka", region: "Asia", image: "/hero.jpg" },
+  { id: "kazakhstan", name: "Kazakhstan", region: "Asia", image: "/hero.jpg" },
+  { id: "azerbaijan", name: "Azerbaijan", region: "Europe", image: "/kenya.jpg" },
 ];
 
 export default function Destinations() {
@@ -119,7 +117,7 @@ export default function Destinations() {
                     <div className="p-5 flex items-center justify-between">
                       <h4 className="text-2xl font-primary font-bold group-hover:text-primary transition-colors">{dest.name}</h4>
                       <Link 
-                        href={`#enquire-${dest.id}`}
+                        href={`/package/${dest.id}`}
                         className="w-10 h-10 rounded-full bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-white transition-colors"
                       >
                         &rarr;

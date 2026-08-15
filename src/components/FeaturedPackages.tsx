@@ -7,48 +7,15 @@ import { MessageCircle, Check } from "lucide-react";
 
 const filterTabs = ["All", "Domestic", "International", "Women's Special", "Safari"];
 
-const packages = [
-  {
-    id: "ladakh-odyssey",
-    title: "Ladakh Odyssey",
-    category: "Himalayan North",
-    filters: ["Domestic", "Women's Special"],
-    duration: "6 Days / 5 Nights",
-    desc: "Pangong Lake, Nubra Valley, Leh monasteries and Himalayan landscapes.",
-    highlights: ["Women-only option", "Acclimatisation planned", "Curated experiences"],
-    price: "PRICE ON REQUEST",
-    image: "/hero.jpg",
-  },
-  {
-    id: "kerala-backwaters",
-    title: "Kerala Backwaters",
-    category: "South India",
-    filters: ["Domestic"],
-    duration: "5 Days / 4 Nights",
-    desc: "Luxury houseboat, Munnar tea gardens and Periyar wildlife.",
-    highlights: ["Premium houseboat", "Munnar tea plantation", "Ayurvedic spa experience"],
-    price: "PRICE ON REQUEST",
-    image: "/bali.jpg",
-  },
-  {
-    id: "ranthambore",
-    title: "Ranthambore & Rajasthan",
-    category: "Rajasthan & Wildlife",
-    filters: ["Domestic", "Safari"],
-    duration: "8 Days / 7 Nights",
-    desc: "Tiger safaris, heritage palace stays and Rajasthan's iconic cities.",
-    highlights: ["Tiger safari", "Expert naturalist", "Heritage palace stays"],
-    price: "PRICE ON REQUEST",
-    image: "/kenya.jpg",
-  },
-];
+import Link from "next/link";
+import { packagesData } from "@/data/packages";
 
 export default function FeaturedPackages() {
   const [activeTab, setActiveTab] = useState("All");
 
   const filteredPackages = activeTab === "All"
-    ? packages
-    : packages.filter(p => p.filters.includes(activeTab));
+    ? packagesData
+    : packagesData.filter(p => p.filters.includes(activeTab));
 
   return (
     <section id="packages" className="py-24 bg-background-alt text-text-primary">
@@ -134,15 +101,13 @@ export default function FeaturedPackages() {
                   <div className="border-t border-gray-100 pt-5 mt-auto">
                     <p className="text-xs font-bold text-gray-400 mb-3 uppercase tracking-wider">{pkg.price}</p>
                     <div className="flex items-center gap-3">
-                      <a 
-                        href="https://wa.me/917700964364" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 bg-secondary hover:bg-primary text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm font-bold transition-colors"
+                      <Link 
+                        href={`/package/${pkg.id}`}
+                        className="flex-1 bg-secondary hover:bg-primary text-white py-3 px-4 rounded-lg flex items-center justify-center gap-2 text-sm font-bold transition-colors group/btn"
                       >
-                        <MessageCircle size={16} className="text-[#25D366] group-hover:text-white transition-colors" />
-                        Enquire on WhatsApp
-                      </a>
+                        View Itinerary
+                        <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                      </Link>
                     </div>
                   </div>
                 </div>
