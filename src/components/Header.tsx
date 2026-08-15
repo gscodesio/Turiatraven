@@ -31,7 +31,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-300">
         
         {/* Top Promo Bar */}
-        <div className={`bg-primary text-white text-[10px] sm:text-xs font-medium py-2 px-3 sm:px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'} justify-between items-center gap-2`}>
+        <div className={`bg-primary text-white text-[10px] sm:text-xs font-medium py-1 sm:py-2 px-3 sm:px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'} justify-center sm:justify-between items-center gap-4 sm:gap-2`}>
           <a href="tel:+917700964364" className="flex items-center gap-1 sm:gap-2 hover:text-white/80 whitespace-nowrap">
             <Phone size={12} className="sm:w-[14px] sm:h-[14px]" /> 
             <span className="hidden min-[380px]:inline">+91-7700964364</span>
@@ -46,7 +46,7 @@ export default function Header() {
         </div>
 
         {/* Main Navbar */}
-        <div className={`w-full bg-white transition-all duration-300 shadow-sm ${isScrolled ? 'py-2 md:py-3' : 'py-2 md:py-4'}`}>
+        <div className={`w-full bg-white transition-all duration-300 shadow-sm ${isScrolled ? 'py-1 md:py-3' : 'py-1.5 md:py-4'}`}>
           <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between">
             
             {/* Logo */}

@@ -37,7 +37,7 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-secondary flex items-center justify-center pt-24 overflow-hidden">
+    <section className="relative min-h-screen w-full bg-secondary flex items-center justify-center pt-24 pb-20 md:pb-0 overflow-hidden">
       {/* Background Video Layer */}
       <div className="absolute inset-0 z-0 bg-black">
         {backgroundVideos.map((video, index) => (
@@ -78,7 +78,7 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-30 w-full max-w-[1200px] mx-auto px-4 flex flex-col items-center justify-center text-center mt-[-5vh]">
+      <div className="relative z-30 w-full max-w-[1200px] mx-auto px-4 flex flex-col items-center justify-center text-center mt-12 md:mt-[-5vh]">
         
         {/* Headline */}
         <motion.div
