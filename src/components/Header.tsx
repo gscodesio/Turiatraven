@@ -45,9 +45,9 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Main Navbar */}
-        <div className={`w-full bg-white transition-all duration-300 shadow-sm ${isScrolled ? 'py-1 md:py-3' : 'py-1.5 md:py-4'}`}>
-          <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between">
+        {/* Main Navbar Wrapper */}
+        <div className={`w-full px-2 sm:px-4 lg:px-8 transition-all duration-300 ${isScrolled ? 'pt-2 sm:pt-3' : 'pt-2 sm:pt-4'}`}>
+          <div className={`max-w-[1400px] mx-auto bg-white/95 backdrop-blur-md transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full border border-white/60 flex items-center justify-between ${isScrolled ? 'py-1 sm:py-2 px-4 sm:px-6' : 'py-1.5 sm:py-2.5 px-4 sm:px-8'}`}>
             
             {/* Logo */}
             <Link
