@@ -31,26 +31,30 @@ export default function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-all duration-300">
         
         {/* Top Promo Bar */}
-        <div className={`bg-primary text-white text-xs font-medium py-2 px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'} justify-between items-center`}>
-          <a href="tel:+917700964364" className="flex items-center gap-2 hover:text-white/80">
-            <Phone size={14} /> +91-7700964364
+        <div className={`bg-primary text-white text-[10px] sm:text-xs font-medium py-2 px-3 sm:px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'} justify-between items-center gap-2`}>
+          <a href="tel:+917700964364" className="flex items-center gap-1 sm:gap-2 hover:text-white/80 whitespace-nowrap">
+            <Phone size={12} className="sm:w-[14px] sm:h-[14px]" /> 
+            <span className="hidden min-[380px]:inline">+91-7700964364</span>
+            <span className="min-[380px]:hidden">Call Us</span>
           </a>
-          <span className="hidden md:block font-bold">Curating Extraordinary Journeys Worldwide – Book Your Free Consultation</span>
-          <a href="mailto:turiatraventours@gmail.com" className="flex items-center gap-2 hover:text-white/80">
-            <Mail size={14} /> Support@turiatraventours.com
+          <span className="hidden md:block font-bold truncate px-2">Curating Extraordinary Journeys Worldwide – Book Your Free Consultation</span>
+          <a href="mailto:turiatraventours@gmail.com" className="flex items-center gap-1 sm:gap-2 hover:text-white/80 whitespace-nowrap">
+            <Mail size={12} className="sm:w-[14px] sm:h-[14px]" /> 
+            <span className="hidden sm:inline">Support@turiatraventours.com</span>
+            <span className="sm:hidden">Email Us</span>
           </a>
         </div>
 
         {/* Main Navbar */}
-        <div className={`w-full bg-white transition-all duration-300 shadow-sm ${isScrolled ? 'py-3' : 'py-4'}`}>
+        <div className={`w-full bg-white transition-all duration-300 shadow-sm ${isScrolled ? 'py-2 md:py-3' : 'py-2 md:py-4'}`}>
           <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between">
             
             {/* Logo */}
             <Link
               href="/"
-              className="text-2xl font-black text-secondary flex items-center gap-2"
+              className="text-lg sm:text-xl md:text-2xl font-black text-secondary flex items-center gap-2"
             >
-              <Image src="/logo1.jpeg" alt="Turiatraven Logo" width={64} height={64} className="rounded-full shadow-md object-cover border-2 border-white" />
+              <Image src="/logo1.jpeg" alt="Turiatraven Logo" width={64} height={64} className="w-8 h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full shadow-md object-cover border-2 border-white" />
               <div><span className="text-primary">Turia</span>traven</div>
             </Link>
 
@@ -95,7 +99,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-white flex flex-col px-6 pt-32 lg:hidden transition-transform duration-300 ${
+        className={`fixed inset-0 z-40 bg-white flex flex-col px-6 pt-24 lg:hidden transition-transform duration-300 ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

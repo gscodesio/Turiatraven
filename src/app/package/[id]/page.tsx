@@ -5,6 +5,7 @@ import { ArrowLeft, Check, Clock, MessageCircle, MapPin } from "lucide-react";
 import { packagesData } from "@/data/packages";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "./ScrollToTop";
 
 export default async function PackagePage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
@@ -16,6 +17,7 @@ export default async function PackagePage({ params }: { params: Promise<{ id: st
 
   return (
     <main className="min-h-screen bg-background-alt selection:bg-primary/20 selection:text-secondary">
+      <ScrollToTop />
       <Header />
       
       {/* Hero Section */}

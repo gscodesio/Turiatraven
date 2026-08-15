@@ -85,16 +85,16 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
-          <h2 className="text-primary text-sm tracking-[0.3em] uppercase font-bold mb-6">
+          <h2 className="text-primary text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase font-bold mb-4 md:mb-6">
             Turiatraven Tours
           </h2>
-          <h1 className="text-white text-5xl md:text-7xl font-light tracking-tight leading-tight mb-6 drop-shadow-lg">
-            Curating Extraordinary <br className="hidden md:block" />
+          <h1 className="text-white text-3xl sm:text-5xl md:text-7xl font-light tracking-tight leading-tight mb-4 md:mb-6 drop-shadow-lg px-2">
+            Curating <br className="block sm:hidden" /> Extraordinary <br className="hidden sm:block" />
             <span className="font-serif italic text-white/90">Journeys</span>
           </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-medium drop-shadow-md">
+          <p className="text-white/80 text-sm sm:text-base md:text-xl max-w-2xl mx-auto font-medium drop-shadow-md px-4">
             Discover the world's most breathtaking destinations with our hand-crafted, luxury travel experiences.
           </p>
         </motion.div>
@@ -109,43 +109,43 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
           <div className="flex flex-col md:flex-row bg-white rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-gray-100">
             
             {/* Destination Field */}
-            <div className="flex-1 px-6 py-4 flex items-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+            <div className="flex-1 px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 flex items-center gap-3 md:gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
               <div className="p-2 bg-primary/10 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <MapPin size={20} />
+                <MapPin size={20} className="w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div className="flex-1 text-left">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Where to?</p>
+                <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 md:mb-1">Where to?</p>
                 <input 
                   type="text" 
                   placeholder="e.g. Bali, Kenya..." 
-                  className="w-full bg-transparent border-none outline-none text-secondary font-bold placeholder-gray-300 focus:placeholder-transparent"
+                  className="w-full bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold placeholder-gray-300 focus:placeholder-transparent"
                 />
               </div>
             </div>
 
             {/* Travel Month Field */}
-            <div className="flex-1 px-6 py-4 flex items-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+            <div className="flex-1 px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 flex items-center gap-3 md:gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
               <div className="p-2 bg-primary/10 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <Calendar size={20} />
+                <Calendar size={20} className="w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div className="flex-1 text-left">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">When?</p>
+                <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 md:mb-1">When?</p>
                 <input 
                   type="month" 
-                  className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary font-bold shadow-none focus:ring-0 cursor-pointer" 
+                  className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold shadow-none focus:ring-0 cursor-pointer" 
                 />
               </div>
             </div>
 
             {/* Travel Style Field */}
-            <div className="flex-1 px-6 py-4 flex items-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
+            <div className="flex-1 px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 flex items-center gap-3 md:gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
               <div className="p-2 bg-primary/10 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <Compass size={20} />
+                <Compass size={20} className="w-4 h-4 md:w-5 md:h-5" />
               </div>
-              <div className="flex-1 text-left">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Travel Style</p>
+              <div className="flex-1 text-left w-full overflow-hidden">
+                <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 md:mb-1">Travel Style</p>
                 <Select>
-                  <SelectTrigger className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary font-bold shadow-none focus:ring-0 hover:bg-transparent [&>svg]:text-gray-400 [&>svg]:h-4 [&>svg]:w-4">
+                  <SelectTrigger className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold shadow-none focus:ring-0 hover:bg-transparent [&>svg]:text-gray-400 [&>svg]:h-4 [&>svg]:w-4 overflow-hidden text-ellipsis whitespace-nowrap">
                     <SelectValue placeholder="All Styles" />
                   </SelectTrigger>
                   <SelectContent>
@@ -160,9 +160,9 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
 
             {/* Search Button */}
             <div className="md:w-auto flex items-stretch p-2">
-              <button className="w-full md:w-auto h-full px-8 py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-md shadow-primary/30 flex items-center justify-center gap-2">
-                <Search size={20} />
-                <span>Search</span>
+              <button className="w-full md:w-auto h-full px-6 py-2.5 sm:py-3 md:px-8 md:py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-md shadow-primary/30 flex items-center justify-center gap-2">
+                <Search size={20} className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-sm md:text-base">Search</span>
               </button>
             </div>
 
