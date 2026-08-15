@@ -133,7 +133,6 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
                 <input 
                   type="month" 
                   className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary font-bold shadow-none focus:ring-0 cursor-pointer" 
-                  style={{ cssText: '::-webkit-calendar-picker-indicator { cursor: pointer; }' }}
                 />
               </div>
             </div>
