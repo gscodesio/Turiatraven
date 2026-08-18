@@ -304,5 +304,137 @@ export const packagesData: Package[] = [
         description: "A final early morning game drive before driving back to Nairobi for your outbound evening flight.",
       },
     ],
+  },
+  {
+    id: "nepal-highlights",
+    title: "Nepal Highlights",
+    category: "South Asia",
+    filters: ["All", "International"],
+    duration: "6 Nights / 7 Days",
+    desc: "Spiritual, Nature, and Wildlife. Experience the perfect blend of spirituality, nature, culture & adventure across Nepal.",
+    highlights: [
+      "Experience spiritual Aarati at the sacred Pashupatinath Temple",
+      "Visit major UNESCO heritage sites including Boudhanath Stupa & Swayambhunath Stupa",
+      "Explore the iconic Sleeping Vishnu at Budhanilkantha Temple",
+      "Scenic drive from Kathmandu to Pokhara via Prithvi Highway",
+      "Witness stunning Himalayan sunrise from Sarangkot",
+      "Enjoy boating on Phewa Lake with visit to Tal Barahi Temple",
+      "Visit Manakamana Temple via thrilling cable car ride",
+      "Experience wildlife adventure with jeep safari in Chitwan",
+      "Enjoy Tharu cultural dance performance in Chitwan"
+    ],
+    inclusions: [
+      "Accommodation",
+      "Daily breakfast",
+      "Sightseeing and transfers",
+      "Jungle Safari in Chitwan",
+      "Manakamana Cable Car tickets"
+    ],
+    price: "Price on Request",
+    image: "/nepal1.jpg",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Kathmandu",
+        description: "Arrival in Kathmandu & Evening Aarati at Pashupatinath."
+      },
+      {
+        day: "2",
+        title: "Kathmandu Full-Day Tour",
+        description: "Visit major UNESCO heritage sites including Boudhanath Stupa & Swayambhunath Stupa."
+      },
+      {
+        day: "3",
+        title: "Kathmandu to Pokhara",
+        description: "Distance: 210 km / 6-7 hrs. Scenic drive from Kathmandu to Pokhara via Prithvi Highway."
+      },
+      {
+        day: "4",
+        title: "Pokhara Sightseeing",
+        description: "Witness stunning Himalayan sunrise from Sarangkot, boating on Phewa Lake with visit to Tal Barahi Temple."
+      },
+      {
+        day: "5",
+        title: "Pokhara to Chitwan via Manakamana",
+        description: "Distance: 170 km / 5.5-6 hrs. Including Manakamana stop via thrilling cable car ride."
+      },
+      {
+        day: "6",
+        title: "Chitwan to Kathmandu",
+        description: "Distance: 170 km / 6-7 hrs. Experience wildlife adventure with jeep safari and enjoy Tharu cultural dance performance."
+      },
+      {
+        day: "7",
+        title: "Kathmandu Departure",
+        description: "Departure from Kathmandu."
+      }
+    ]
+  },
+  {
+    id: "enchanting-nepal",
+    title: "Enchanting Nepal",
+    category: "South Asia",
+    filters: ["All", "International"],
+    duration: "7 Nights - 8 Days",
+    desc: "Heritage, Nature & Safari. Start/End: KTM Airport. Valid till Aug 2026.",
+    highlights: [
+      "Cultural exploration of UNESCO heritage",
+      "World Famous cable car rides",
+      "Exciting Jungle safari experience",
+      "Natural beauty & adventure in Pokhara",
+      "Sunrise views from Nagarkot",
+      "Mt Everest Flight from Kathmandu"
+    ],
+    inclusions: [
+      "Accommodation",
+      "Sightseeing and transfers",
+      "Jungle safari",
+      "Cable car rides",
+      "Mt Everest Flight"
+    ],
+    price: "Price on Request",
+    image: "/nepal2.jpg",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Kathmandu",
+        description: "Arrival in Kathmandu - stay."
+      },
+      {
+        day: "2",
+        title: "Kathmandu Day Sightseeing",
+        description: "Kathmandu Day Sightseeing."
+      },
+      {
+        day: "3",
+        title: "Chandragiri Hills Experience",
+        description: "Chandragiri Hills Experience."
+      },
+      {
+        day: "4",
+        title: "Manakamana & Chitwan",
+        description: "Manakamana Cable Car & Drive to Chitwan (5-6 hrs)."
+      },
+      {
+        day: "5",
+        title: "Jungle Safari & Pokhara",
+        description: "Jungle Safari & Drive to Pokhara (4-5 hrs)."
+      },
+      {
+        day: "6",
+        title: "Pokhara day Sightseeing",
+        description: "Pokhara day Sightseeing."
+      },
+      {
+        day: "7",
+        title: "Fly to KTM & Nagarkot",
+        description: "Fly to KTM (30 Min) - Bhaktapur & Nagarkot sunset."
+      },
+      {
+        day: "8",
+        title: "Sunrise & Departure",
+        description: "Sunrise & Departure (2 hrs)."
+      }
+    ]
   }
 ];

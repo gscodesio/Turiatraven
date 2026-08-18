@@ -45,14 +45,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary shrink-0" />
-                <a href="tel:+917700964364" className="hover:text-white transition-colors">+91 77009 64364</a>
+                <a href="tel:+919594992125" className="hover:text-white transition-colors">+91 95949 92125</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary shrink-0" />
                 <a href="mailto:turiatraventours@gmail.com" className="hover:text-white transition-colors">turiatraventours@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 mt-4">
-                <a href="https://wa.me/917700964364" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white px-4 py-2 rounded font-semibold transition-colors text-xs uppercase tracking-wider">
+                <a href="https://wa.me/919594992125" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white px-4 py-2 rounded font-semibold transition-colors text-xs uppercase tracking-wider">
                   <MessageCircle size={14} />
                   Chat on WhatsApp
                 </a>

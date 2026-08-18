@@ -1,28 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { MapPin, ChevronDown } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const categories = ["All", "Asia", "Africa", "Indian Ocean", "Europe", "Oceania"];
+const domesticCategories = ["All", "Jammu and Kashmir", "Kerala", "Himachal", "North East"];
+const internationalCategories = ["All", "Asia", "Africa", "Indian Ocean", "Europe", "Oceania"];
 
-const destinations = [
-  { id: "kenya-safari", name: "Kenya", region: "Africa", image: "/kenya.jpg" },
-  { id: "bali-escapade", name: "Bali", region: "Asia", image: "/bali.jpg" },
-  { id: "south-africa", name: "South Africa", region: "Africa", image: "/hero.jpg" },
-  { id: "sri-lanka", name: "Sri Lanka", region: "Asia", image: "/hero.jpg" },
-  { id: "kazakhstan", name: "Kazakhstan", region: "Asia", image: "/hero.jpg" },
-  { id: "azerbaijan", name: "Azerbaijan", region: "Europe", image: "/kenya.jpg" },
+const allDestinations = [
+  // Domestic
+  { id: "jammu-kashmir", name: "Srinagar Escapade", region: "Jammu and Kashmir", type: "Domestic", image: "/hero.jpg" },
+  { id: "kerala-backwaters", name: "Munnar Retreat", region: "Kerala", type: "Domestic", image: "/bali.jpg" },
+  { id: "himachal-retreat", name: "Manali Getaway", region: "Himachal", type: "Domestic", image: "/kenya.jpg" },
+  { id: "northeast-tour", name: "Meghalaya Tour", region: "North East", type: "Domestic", image: "/hero.jpg" },
+  
+  // International
+  { id: "nepal-highlights", name: "Nepal Highlights", region: "Asia", type: "International", image: "/nepal1.jpg" },
+  { id: "enchanting-nepal", name: "Enchanting Nepal", region: "Asia", type: "International", image: "/nepal2.jpg" },
+  { id: "kenya-safari", name: "Kenya", region: "Africa", type: "International", image: "/kenya.jpg" },
+  { id: "bali-escapade", name: "Bali", region: "Asia", type: "International", image: "/bali.jpg" },
+  { id: "south-africa", name: "South Africa", region: "Africa", type: "International", image: "/hero.jpg" },
+  { id: "sri-lanka", name: "Sri Lanka", region: "Asia", type: "International", image: "/hero.jpg" },
+  { id: "kazakhstan", name: "Kazakhstan", region: "Asia", type: "International", image: "/hero.jpg" },
+  { id: "azerbaijan", name: "Azerbaijan", region: "Europe", type: "International", image: "/kenya.jpg" },
 ];
 
 export default function Destinations() {
+  const [tourType, setTourType] = useState("International");
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredDestinations = activeCategory === "All" 
-    ? destinations 
-    : destinations.filter(d => d.region === activeCategory);
+  useEffect(() => {
+    setActiveCategory("All");
+  }, [tourType]);
+
+  const currentCategories = tourType === "Domestic" ? domesticCategories : internationalCategories;
+
+  const filteredDestinations = allDestinations.filter(d => {
+    if (d.type !== tourType) return false;
+    if (activeCategory === "All") return true;
+    return d.region === activeCategory;
+  });
 
   return (
     <section id="destinations" className="py-24 bg-white text-secondary">
@@ -41,24 +61,35 @@ export default function Destinations() {
               From island escapes to African safaris, discover journeys designed around the way you want to travel.
             </p>
           </motion.div>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-start md:items-end gap-2 z-10"
           >
+            <Select value={tourType} onValueChange={(val) => setTourType(val || "International")}>
+              <SelectTrigger className="w-[240px] md:w-[280px] bg-primary text-white border-none rounded-full font-bold h-12 shadow-md hover:bg-primary/90 transition-colors focus:ring-0 focus:ring-offset-0 [&>svg]:text-white">
+                <SelectValue placeholder="Select Tour Type" />
+              </SelectTrigger>
+              <SelectContent className="rounded-xl shadow-xl border-gray-100">
+                <SelectItem value="International" className="font-bold py-3 cursor-pointer">International Destinations</SelectItem>
+                <SelectItem value="Domestic" className="font-bold py-3 cursor-pointer">Domestic Destinations</SelectItem>
+              </SelectContent>
+            </Select>
             <Link 
               href="#all-destinations"
-              className="text-sm font-bold text-primary hover:text-secondary transition-colors flex items-center gap-2"
+              className="text-sm font-bold text-primary hover:text-secondary transition-colors mt-2"
             >
-              View All Destinations &rarr;
+              View All {tourType} &rarr;
             </Link>
           </motion.div>
         </div>
 
         {/* Category Tabs */}
         <div className="flex overflow-x-auto pb-4 mb-8 gap-4 scrollbar-hide">
-          {categories.map((cat) => (
+          {currentCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -86,13 +117,13 @@ export default function Destinations() {
                 onClick={() => setActiveCategory("All")}
                 className="mt-4 text-primary font-bold hover:underline"
               >
-                View all available destinations
+                View all {tourType} destinations
               </button>
             </motion.div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <AnimatePresence>
-                {filteredDestinations.map((dest, index) => (
+              <AnimatePresence mode="popLayout">
+                {filteredDestinations.map((dest) => (
                   <motion.div
                     layout
                     key={dest.id}

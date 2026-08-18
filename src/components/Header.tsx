@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 import { 
   Menu, X, Phone, Mail, Home, MapPin, Globe, 
-  Map, Info, UserPlus, Shield
+  Map, Info, UserPlus, Shield, ChevronDown
 } from "lucide-react";
 
 export default function Header() {
@@ -20,8 +20,28 @@ export default function Header() {
 
   const navLinks = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Domestic", href: "#packages", icon: MapPin },
-    { name: "International", href: "#destinations", icon: Globe },
+    { 
+      name: "Domestic", 
+      href: "#packages", 
+      icon: MapPin,
+      dropdown: [
+        { name: "Jammu and Kashmir", href: "#packages" },
+        { name: "Kerala", href: "#packages" },
+        { name: "Himachal", href: "#packages" },
+        { name: "North East", href: "#packages" },
+      ]
+    },
+    { 
+      name: "International", 
+      href: "#destinations", 
+      icon: Globe,
+      dropdown: [
+        { name: "Dubai", href: "#destinations" },
+        { name: "Thailand", href: "#destinations" },
+        { name: "Europe", href: "#destinations" },
+        { name: "Bali", href: "#destinations" },
+      ]
+    },
     { name: "Plan a Tour", href: "#plan", icon: Map },
     { name: "About Us", href: "#about", icon: Info },
   ];
@@ -32,9 +52,9 @@ export default function Header() {
         
         {/* Top Promo Bar */}
         <div className={`bg-primary text-white text-[10px] sm:text-xs font-medium py-1 sm:py-2 px-3 sm:px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'} justify-center sm:justify-between items-center gap-4 sm:gap-2`}>
-          <a href="tel:+917700964364" className="flex items-center gap-1 sm:gap-2 hover:text-white/80 whitespace-nowrap">
+          <a href="tel:+919594992125" className="flex items-center gap-1 sm:gap-2 hover:text-white/80 whitespace-nowrap">
             <Phone size={12} className="sm:w-[14px] sm:h-[14px]" /> 
-            <span className="hidden min-[380px]:inline">+91-7700964364</span>
+            <span className="hidden min-[380px]:inline">+91-9594992125</span>
             <span className="min-[380px]:hidden">Call Us</span>
           </a>
           <span className="hidden md:block font-bold truncate px-2">Curating Extraordinary Journeys Worldwide – Book Your Free Consultation</span>
@@ -69,11 +89,36 @@ export default function Header() {
               <nav className="hidden lg:flex items-center gap-6">
                 {navLinks.map((link) => {
                   const Icon = link.icon;
+                  if (link.dropdown) {
+                    return (
+                      <div key={link.name} className="relative group">
+                        <Link
+                          href={link.href}
+                          className="text-sm font-medium text-secondary group-hover:text-primary transition-colors flex items-center gap-2 py-2"
+                        >
+                          <Icon size={16} className="text-primary" />
+                          {link.name}
+                          <ChevronDown size={14} className="text-secondary group-hover:text-primary transition-colors" />
+                        </Link>
+                        <div className="absolute top-full left-0 mt-0 w-48 bg-white shadow-lg rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                          {link.dropdown.map((sublink) => (
+                            <Link
+                              key={sublink.name}
+                              href={sublink.href}
+                              className="block px-4 py-2 text-sm text-secondary hover:bg-gray-50 hover:text-primary transition-colors"
+                            >
+                              {sublink.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  }
                   return (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="text-sm font-medium text-secondary hover:text-primary transition-colors flex items-center gap-2"
+                      className="text-sm font-medium text-secondary hover:text-primary transition-colors flex items-center gap-2 py-2"
                     >
                       <Icon size={16} className="text-primary" />
                       {link.name}
@@ -115,15 +160,30 @@ export default function Header() {
           {navLinks.map((link) => {
             const Icon = link.icon;
             return (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-lg font-bold text-secondary hover:text-primary transition-colors flex items-center gap-3 border-b border-gray-100 pb-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Icon size={20} className="text-primary" />
-                {link.name}
-              </Link>
+              <div key={link.name} className="border-b border-gray-100 pb-4">
+                <Link
+                  href={link.href}
+                  className="text-lg font-bold text-secondary hover:text-primary transition-colors flex items-center gap-3"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Icon size={20} className="text-primary" />
+                  {link.name}
+                </Link>
+                {link.dropdown && (
+                  <div className="flex flex-col gap-3 mt-4 ml-8">
+                    {link.dropdown.map((sublink) => (
+                      <Link
+                        key={sublink.name}
+                        href={sublink.href}
+                        className="text-base font-medium text-gray-600 hover:text-primary transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {sublink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             );
           })}
           <div className="flex flex-col gap-4 mt-4">

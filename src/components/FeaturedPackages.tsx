@@ -85,16 +85,21 @@ export default function FeaturedPackages() {
                     {pkg.category}
                   </span>
                   <h4 className="text-2xl font-primary font-bold mb-3">{pkg.title}</h4>
-                  <p className="text-text-secondary text-sm mb-6 flex-grow">{pkg.desc}</p>
+                  <p className="text-text-secondary text-sm mb-6 line-clamp-2">{pkg.desc}</p>
                   
                   {/* Highlights */}
                   <ul className="mb-6 space-y-2">
-                    {pkg.highlights.map((highlight, i) => (
+                    {pkg.highlights.slice(0, 3).map((highlight, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-secondary">
                         <Check size={16} className="text-primary shrink-0 mt-0.5" />
-                        <span>{highlight}</span>
+                        <span className="line-clamp-2">{highlight}</span>
                       </li>
                     ))}
+                    {pkg.highlights.length > 3 && (
+                      <li className="text-xs font-bold text-primary pl-6 pt-1">
+                        + {pkg.highlights.length - 3} more highlights
+                      </li>
+                    )}
                   </ul>
 
                   {/* Price & CTA */}

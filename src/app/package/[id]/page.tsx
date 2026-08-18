@@ -131,7 +131,7 @@ export default async function PackagePage({ params }: { params: Promise<{ id: st
                   
                   <div className="flex flex-col gap-3">
                     <a 
-                      href="https://wa.me/917700964364" 
+                      href="https://wa.me/919594992125" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#25D366] hover:bg-[#1da851] text-white py-4 px-6 rounded-xl flex items-center justify-center gap-2 font-bold transition-all hover:scale-[1.02]"

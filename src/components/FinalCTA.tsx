@@ -38,7 +38,7 @@ export default function FinalCTA() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="https://wa.me/917700964364" 
+                href="https://wa.me/919594992125" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20B958] text-white px-8 py-4 rounded-lg font-bold transition-colors"
