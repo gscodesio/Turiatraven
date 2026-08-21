@@ -24,7 +24,7 @@ export const packagesData: Package[] = [
     title: "Kazakhstan",
     category: "CIS",
     filters: ["All", "International"],
-    duration: "6 Days / 5 Nights",
+    duration: "5 Nights / 6 Days",
     desc: "Almaty mountains & vast steppe landscapes. Experience Central Asia's most modern city.",
     highlights: ["Medeu Skating Rink", "Big Almaty Lake", "Tian Shan Mountain Views"],
     inclusions: [
@@ -70,7 +70,7 @@ export const packagesData: Package[] = [
     title: "Azerbaijan",
     category: "CIS",
     filters: ["All", "International", "Women's Special"],
-    duration: "5 Days / 4 Nights",
+    duration: "4 Nights / 5 Days",
     desc: "The Land of Fire. Explore the perfect blend of ancient heritage and futuristic architecture in Baku.",
     highlights: ["Flame Towers", "Old City (Icherisheher)", "Gobustan Rock Art"],
     inclusions: [
@@ -116,7 +116,7 @@ export const packagesData: Package[] = [
     title: "South Africa",
     category: "Southern Africa",
     filters: ["All", "International", "Safari"],
-    duration: "8 Days / 7 Nights",
+    duration: "7 Nights / 8 Days",
     desc: "From the vibrant streets of Cape Town to thrilling Big Five safaris in Kruger National Park.",
     highlights: ["Big Five Safari", "Table Mountain Cable Car", "Cape Winelands Tasting"],
     inclusions: [
@@ -162,7 +162,7 @@ export const packagesData: Package[] = [
     title: "Sri Lanka",
     category: "South Asia",
     filters: ["All", "International"],
-    duration: "7 Days / 6 Nights",
+    duration: "6 Nights / 7 Days",
     desc: "A tapestry of lush tea gardens, ancient temples, and pristine golden beaches.",
     highlights: ["Sigiriya Rock Fortress", "Scenic Train to Ella", "Galle Fort"],
     inclusions: [
@@ -174,7 +174,7 @@ export const packagesData: Package[] = [
       "English-speaking chauffeur guide",
     ],
     price: "Price on Request",
-    image: "/hero.jpg", // Sri lanka placeholder
+    image: "/srilanka.jpg", // Sri lanka placeholder
     itinerary: [
       {
         day: "1",
@@ -213,7 +213,7 @@ export const packagesData: Package[] = [
     title: "Bali Escapade",
     category: "South East Asia",
     filters: ["All", "International", "Women's Special"],
-    duration: "6 Days / 5 Nights",
+    duration: "5 Nights / 6 Days",
     desc: "Experience the spiritual heart, terraced rice paddies, and stunning beaches of the Island of the Gods.",
     highlights: ["Ubud Swing & Rice Terraces", "Beach Club Access", "Balinese Spa Treatment"],
     inclusions: [
@@ -264,7 +264,7 @@ export const packagesData: Package[] = [
     title: "Kenya Wildlife Safari",
     category: "East Africa",
     filters: ["All", "International", "Safari"],
-    duration: "7 Days / 6 Nights",
+    duration: "6 Nights / 7 Days",
     desc: "Witness the Great Migration and majestic wildlife in the iconic Masai Mara and Amboseli reserves.",
     highlights: ["Masai Mara Game Drives", "Views of Mt. Kilimanjaro", "Maasai Village Visit"],
     inclusions: [
@@ -375,7 +375,7 @@ export const packagesData: Package[] = [
     title: "Enchanting Nepal",
     category: "South Asia",
     filters: ["All", "International"],
-    duration: "7 Nights - 8 Days",
+    duration: "7 Nights / 8 Days",
     desc: "Heritage, Nature & Safari. Start/End: KTM Airport. Valid till Aug 2026.",
     highlights: [
       "Cultural exploration of UNESCO heritage",

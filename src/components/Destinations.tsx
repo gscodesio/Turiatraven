@@ -16,7 +16,7 @@ const allDestinations = [
   { id: "kerala-backwaters", name: "Munnar Retreat", region: "Kerala", type: "Domestic", image: "/bali.jpg" },
   { id: "himachal-retreat", name: "Manali Getaway", region: "Himachal", type: "Domestic", image: "/kenya.jpg" },
   { id: "northeast-tour", name: "Meghalaya Tour", region: "North East", type: "Domestic", image: "/hero.jpg" },
-  
+
   // International
   { id: "nepal-highlights", name: "Nepal Highlights", region: "Asia", type: "International", image: "/nepal1.jpg" },
   { id: "enchanting-nepal", name: "Enchanting Nepal", region: "Asia", type: "International", image: "/nepal2.jpg" },
@@ -61,7 +61,7 @@ export default function Destinations() {
               From island escapes to African safaris, discover journeys designed around the way you want to travel.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function Destinations() {
                 <SelectItem value="Domestic" className="font-bold py-3 cursor-pointer">Domestic Destinations</SelectItem>
               </SelectContent>
             </Select>
-            <Link 
+            <Link
               href="#all-destinations"
               className="text-sm font-bold text-primary hover:text-secondary transition-colors mt-2"
             >
@@ -93,11 +93,10 @@ export default function Destinations() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-semibold transition-colors ${
-                activeCategory === cat 
-                  ? "bg-secondary text-white" 
+              className={`whitespace-nowrap px-6 py-2 rounded-full text-sm font-semibold transition-colors ${activeCategory === cat
+                  ? "bg-secondary text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -107,13 +106,13 @@ export default function Destinations() {
         {/* Destination Grid */}
         <motion.div layout className="min-h-[350px]">
           {filteredDestinations.length === 0 ? (
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               className="flex flex-col items-center justify-center h-64 text-center"
             >
               <p className="text-xl text-gray-500 font-medium">New destinations in this region are coming soon!</p>
-              <button 
+              <button
                 onClick={() => setActiveCategory("All")}
                 className="mt-4 text-primary font-bold hover:underline"
               >
@@ -147,7 +146,7 @@ export default function Destinations() {
                     </div>
                     <div className="p-5 flex items-center justify-between">
                       <h4 className="text-2xl font-primary font-bold group-hover:text-primary transition-colors">{dest.name}</h4>
-                      <Link 
+                      <Link
                         href={`/package/${dest.id}`}
                         className="w-10 h-10 rounded-full bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-primary group-hover:text-white transition-colors"
                       >
