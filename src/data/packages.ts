@@ -436,5 +436,501 @@ export const packagesData: Package[] = [
         description: "Sunrise & Departure (2 hrs)."
       }
     ]
+  },
+  {
+    id: "kashi-yatra",
+    title: "Kashi Yatra",
+    category: "Pilgrimage",
+    filters: ["All", "Domestic"],
+    duration: "4 Nights / 5 Days",
+    desc: "Embark on a spiritual journey to the holy cities of Varanasi (Kashi), Prayagraj, and Ayodhya. Experience the divine Ganga Aarti and seek blessings.",
+    highlights: [
+      "Kashi Vishwanath Temple Darshan & Ganga Aarti",
+      "Holy Bath at Triveni Sangam, Prayagraj",
+      "Visit Ram Janmabhoomi & Kanak Bhawan in Ayodhya"
+    ],
+    inclusions: [
+      "4 Nights stay in comfortable hotels",
+      "Daily Breakfast & Dinner",
+      "All sightseeing & transfers by AC vehicle",
+      "Boat ride on the Ganges in Varanasi",
+      "Local tour guide assistance"
+    ],
+    price: "Price on Request",
+    image: "/kashiyatra.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Varanasi & Ganga Aarti",
+        description: "Arrive in Varanasi. In the evening, witness the spectacular and spiritual Ganga Aarti ceremony at Dashashwamedh Ghat."
+      },
+      {
+        day: "2",
+        title: "Kashi Vishwanath Darshan & Sarnath",
+        description: "Early morning visit to Kashi Vishwanath Temple, Annapurna Temple, and Vishalakshi Temple. Later, visit Sarnath where Lord Buddha preached his first sermon."
+      },
+      {
+        day: "3",
+        title: "Varanasi to Prayagraj",
+        description: "Drive to Prayagraj. Visit Triveni Sangam (confluence of Ganges, Yamuna, and mythical Saraswati) for a holy bath, Anand Bhawan, and Hanuman Temple."
+      },
+      {
+        day: "4",
+        title: "Prayagraj to Ayodhya",
+        description: "Drive to the holy city of Ayodhya. Visit Ram Janmabhoomi, Hanuman Garhi, Kanak Bhawan, and take a stroll along the Sarayu River ghats."
+      },
+      {
+        day: "5",
+        title: "Ayodhya to Varanasi & Departure",
+        description: "Return to Varanasi and transfer to the airport/railway station for your onward journey."
+      }
+    ]
+  },
+  {
+    id: "kashmir-special",
+    title: "Kashmir Special Package",
+    category: "Hills & Valleys",
+    filters: ["All", "Domestic"],
+    duration: "4 Nights / 5 Days",
+    desc: "Explore the paradise on Earth. Relax in a traditional houseboat, ride the Gulmarg gondola, and stroll through the stunning Mughal Gardens.",
+    highlights: [
+      "Stay in a luxury Houseboat on Dal Lake",
+      "Shikara Ride & Floating Market Experience",
+      "Gondola Ride in Gulmarg (Phase 1 & 2)"
+    ],
+    inclusions: [
+      "3 Nights in Srinagar & 1 Night in Houseboat",
+      "Daily Breakfast & Dinner",
+      "Private AC sedan for all transfers & tours",
+      "1-hour Shikara ride on Dal Lake",
+      "Toll, parking, and driver allowance"
+    ],
+    price: "Price on Request",
+    image: "/kashmirspecialpackage.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Srinagar & Shikara Ride",
+        description: "Arrive in Srinagar. Transfer to your Dal Lake houseboat. Enjoy a peaceful Shikara ride in the evening."
+      },
+      {
+        day: "2",
+        title: "Srinagar Local Sightseeing",
+        description: "Visit the famous Shalimar Bagh, Nishat Bagh (Mughal Gardens), and the historical Shankaracharya Temple."
+      },
+      {
+        day: "3",
+        title: "Gulmarg Day Excursion",
+        description: "Drive to Gulmarg. Experience the spectacular Gondola ride offering breathtaking views of snow-capped mountains."
+      },
+      {
+        day: "4",
+        title: "Pahalgam Valley Tour",
+        description: "Travel to Pahalgam. Explore the saffron fields, Avantipura ruins, and the scenic Betaab Valley."
+      },
+      {
+        day: "5",
+        title: "Srinagar Departure",
+        description: "Return to Srinagar and transfer to the airport for your flight back home."
+      }
+    ]
+  },
+  {
+    id: "south-india-temple",
+    title: "South India Temple Circuit",
+    category: "Pilgrimage",
+    filters: ["All", "Domestic"],
+    duration: "6 Nights / 7 Days",
+    desc: "A divine journey through the architectural wonders of South Indian temples. Explore Madurai, Rameshwaram, and Kanyakumari.",
+    highlights: [
+      "Meenakshi Amman Temple Darshan in Madurai",
+      "Ramanathaswamy Temple & Holy Bath in Rameshwaram",
+      "Vivekananda Rock Memorial in Kanyakumari"
+    ],
+    inclusions: [
+      "6 Nights stay in premium hotels",
+      "Daily breakfast at all hotels",
+      "All sightseeing and transfers by private vehicle",
+      "Ferry ticket to Vivekananda Rock Memorial",
+      "Professional English/Hindi speaking driver guide"
+    ],
+    price: "Price on Request",
+    image: "/South India Temple Circuit.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Madurai",
+        description: "Arrive in Madurai. Check-in to your hotel and visit the magnificent Meenakshi Amman Temple in the evening."
+      },
+      {
+        day: "2",
+        title: "Madurai to Rameshwaram",
+        description: "Drive to Rameshwaram via the scenic Pamban Bridge. Visit the Ramanathaswamy Temple and take a holy dip in the 22 wells."
+      },
+      {
+        day: "3",
+        title: "Dhanushkodi Exploration",
+        description: "Visit Dhanushkodi, the ghost town at the southern tip of India, and enjoy views of the Indian Ocean and Bay of Bengal."
+      },
+      {
+        day: "4",
+        title: "Rameshwaram to Kanyakumari",
+        description: "Drive to Kanyakumari. In the evening, witness the breathtaking sunset at the confluence of three oceans."
+      },
+      {
+        day: "5",
+        title: "Kanyakumari Sightseeing",
+        description: "Visit the Vivekananda Rock Memorial, Thiruvalluvar Statue, and the Suchindram Temple."
+      },
+      {
+        day: "6",
+        title: "Kanyakumari to Trivandrum",
+        description: "Drive to Trivandrum. Visit the historic Padmanabhaswamy Temple, the richest temple in the world."
+      },
+      {
+        day: "7",
+        title: "Departure",
+        description: "Transfer to Trivandrum airport/railway station for your onward journey."
+      }
+    ]
+  },
+  {
+    id: "sikkim-darjeeling-special",
+    title: "Sikkim & Darjeeling - Pure Veg Janmashtami Special",
+    category: "Himalayas",
+    filters: ["All", "Domestic"],
+    duration: "6 Nights / 7 Days",
+    desc: "Celebrate Janmashtami in the serene hills of Northeast India. A fully curated, pure vegetarian tour covering Gangtok, Pelling, and Darjeeling.",
+    highlights: [
+      "100% Pure Vegetarian Meals Included",
+      "Sunrise over Mt. Kanchenjunga from Tiger Hill",
+      "Visit Tsomgo Lake & Baba Mandir in Gangtok"
+    ],
+    inclusions: [
+      "6 Nights stay in premium veg-friendly hotels",
+      "All Pure Veg meals (Breakfast, Lunch, Dinner)",
+      "Private SUV (Xylo/Innova) for all transfers & tours",
+      "Permits for Tsomgo Lake & Baba Mandir",
+      "Local sightseeing in Gangtok, Pelling, and Darjeeling"
+    ],
+    price: "Price on Request",
+    image: "/Sikkim & Darjeeling-Pure Veg Janmashtami Special.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Bagdogra to Gangtok",
+        description: "Arrive at Bagdogra Airport / NJP Railway Station. Enjoy a scenic drive to Gangtok. Check-in and relax."
+      },
+      {
+        day: "2",
+        title: "Tsomgo Lake & Baba Mandir Excursion",
+        description: "Visit the high-altitude Tsomgo Lake (12,400 ft) and the sacred Baba Harbhajan Singh Mandir."
+      },
+      {
+        day: "3",
+        title: "Gangtok to Pelling",
+        description: "Drive to Pelling, passing through the beautiful tea gardens and Ravangla Buddha Park."
+      },
+      {
+        day: "4",
+        title: "Pelling Sightseeing",
+        description: "Visit the Skywalk, Khecheopalri Lake, Rimbi Waterfalls, and the historic Pemayangtse Monastery."
+      },
+      {
+        day: "5",
+        title: "Pelling to Darjeeling",
+        description: "Drive to Darjeeling, the Queen of Hills. Evening free for shopping at Chowrasta Mall."
+      },
+      {
+        day: "6",
+        title: "Darjeeling Tiger Hill Sunrise & Town Tour",
+        description: "Wake up at 4:00 AM to witness the golden sunrise over Mt. Kanchenjunga from Tiger Hill. Later, visit Ghoom Monastery, Batasia Loop, and a tea estate."
+      },
+      {
+        day: "7",
+        title: "Departure to Bagdogra",
+        description: "Transfer back to Bagdogra Airport / NJP for your return journey."
+      }
+    ]
+  },
+  {
+    id: "georgia-tbilisi",
+    title: "Discover Georgia Tbilisi",
+    category: "CIS",
+    filters: ["All", "International"],
+    duration: "4 Nights / 5 Days",
+    desc: "Experience the charm of Georgia. Explore the historic streets of Tbilisi, taste Georgian cuisine, and visit the stunning Caucasus mountains.",
+    highlights: [
+      "Narikhala Fortress & Cable Car in Tbilisi",
+      "Scenic Drive along the Georgian Military Highway",
+      "Explore the Kazbegi Mountains & Gergeti Trinity Church"
+    ],
+    inclusions: [
+      "4 Nights stay in a centrally located 4-star hotel",
+      "Daily Breakfast & local dinners",
+      "All transfers and tours in a private vehicle",
+      "English-speaking local guide",
+      "Georgia tourist visa assistance"
+    ],
+    price: "Price on Request",
+    image: "/Discover Georgia Tbilisi.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Tbilisi",
+        description: "Arrive at Tbilisi International Airport. Meet and transfer to your hotel. Enjoy an evening walk in Old Tbilisi."
+      },
+      {
+        day: "2",
+        title: "Tbilisi City Tour",
+        description: "Explore Metekhi Church, Narikala Fortress (via cable car), Shardeni Street, and the famous sulfur baths."
+      },
+      {
+        day: "3",
+        title: "Ananuri & Kazbegi Mountain Tour",
+        description: "Drive up the Military Highway. Visit Ananuri Fort and Gudauri Friendship Monument. Take a 4x4 ride to Gergeti Trinity Church in Kazbegi."
+      },
+      {
+        day: "4",
+        title: "Kakheti Wine Region",
+        description: "Visit the Kakheti region, known for its vineyards. Explore the romantic town of Sighnaghi (City of Love) and Bodbe Monastery."
+      },
+      {
+        day: "5",
+        title: "Departure",
+        description: "Relaxed morning before transferring to the airport for your flight back home."
+      }
+    ]
+  },
+  {
+    id: "vietnam-all-inclusive",
+    title: "Vietnam All Inclusive with Phu Quoc Island",
+    category: "South East Asia",
+    filters: ["All", "International"],
+    duration: "8 Nights / 9 Days",
+    desc: "An all-inclusive luxurious escape to Vietnam. Discover the history of Hanoi, the beautiful beaches of Phu Quoc, and the vibrant life of Da Nang.",
+    highlights: [
+      "All Internal Flights Included",
+      "Relax on the pristine beaches of Phu Quoc Island",
+      "Visit Ba Na Hills & Golden Bridge in Da Nang"
+    ],
+    inclusions: [
+      "8 Nights in luxury 4 & 5-star hotels",
+      "All internal flights & airport transfers",
+      "Daily breakfast, lunch, and dinner",
+      "Guided tours in Hanoi, Da Nang, and Phu Quoc",
+      "Vietnam e-visa approval letter"
+    ],
+    price: "Price on Request",
+    image: "/Vietnam All Inclusive with Phu Quoc Island.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Hanoi",
+        description: "Arrive in Hanoi, the historic capital. Transfer to your hotel. Evening walking tour of the Old Quarter."
+      },
+      {
+        day: "2",
+        title: "Hanoi City Tour & Fly to Da Nang",
+        description: "Visit Ho Chi Minh Mausoleum and Temple of Literature. Fly to Da Nang in the afternoon."
+      },
+      {
+        day: "3",
+        title: "Ba Na Hills & Golden Bridge",
+        description: "Take the cable car to Ba Na Hills. Walk on the iconic Golden Bridge held by giant hands and enjoy Fantasy Park."
+      },
+      {
+        day: "4",
+        title: "Hoi An Ancient Town",
+        description: "Spend the day exploring the UNESCO-listed Hoi An Ancient Town with its lanterns and historic assembly halls."
+      },
+      {
+        day: "5",
+        title: "Fly to Phu Quoc Island",
+        description: "Transfer to airport and fly to the tropical paradise of Phu Quoc. Check-in to your beach resort."
+      },
+      {
+        day: "6",
+        title: "Phu Quoc Island Safari & Grand World",
+        description: "Visit the Vinpearl Safari and explore the vibrant Grand World entertainment complex."
+      },
+      {
+        day: "7",
+        title: "Phu Quoc Cable Car & 3 Island Tour",
+        description: "Ride the world's longest over-sea cable car to Hon Thom. Enjoy snorkeling and beach relaxation."
+      },
+      {
+        day: "8",
+        title: "Phu Quoc Leisure",
+        description: "A free day to relax on the white sands of Khem Beach or explore the local night market."
+      },
+      {
+        day: "9",
+        title: "Departure",
+        description: "Transfer to the airport for your return flight."
+      }
+    ]
+  },
+  {
+    id: "almaty-dussehra",
+    title: "Almaty Dussehra Special",
+    category: "CIS",
+    filters: ["All", "International"],
+    duration: "5 Nights / 6 Days",
+    desc: "Celebrate Dussehra in Almaty. Experience the snow-covered peaks of Shymbulak, stunning lakes, and Central Asian cultural hospitality.",
+    highlights: [
+      "Dussehra Special Celebrations in Almaty",
+      "Scenic Cable Car to Shymbulak Ski Resort",
+      "Visit the breathtaking Charyn Canyon"
+    ],
+    inclusions: [
+      "5 Nights in a premium 4-star hotel in Almaty",
+      "Daily breakfast & gala dinners",
+      "All airport and sightseeing transfers in AC coach",
+      "Charyn Canyon & Kolsay Lakes full-day tour",
+      "Kazakhstan e-visa assistance"
+    ],
+    price: "Price on Request",
+    image: "/Almaty Dussehra Special.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Almaty",
+        description: "Arrive in Almaty. Check-in to your hotel. Evening walk down the lively Arbat street."
+      },
+      {
+        day: "2",
+        title: "Almaty City Tour",
+        description: "Explore Panfilov Park, Zenkov Cathedral (wooden church), and Green Bazaar."
+      },
+      {
+        day: "3",
+        title: "Medeu & Shymbulak resort",
+        description: "Ride the gondola from Medeu to Shymbulak Ski Resort. Enjoy panoramic mountain views."
+      },
+      {
+        day: "4",
+        title: "Charyn Canyon & Kolsay Lake",
+        description: "Travel to Charyn Canyon, also known as the Valley of Castles. Later, visit the serene Kolsay Lake."
+      },
+      {
+        day: "5",
+        title: "Shopping & Kok Tobe Hill",
+        description: "Take a cable car to Kok Tobe Hill. Enjoy panoramic views of the city. Later, shop at Mega Mall."
+      },
+      {
+        day: "6",
+        title: "Departure",
+        description: "Transfer to the airport for your flight back home."
+      }
+    ]
+  },
+  {
+    id: "kashmir-delight",
+    title: "Kashmir Delight Package",
+    category: "Hills & Valleys",
+    filters: ["All", "Domestic"],
+    duration: "6 Nights / 7 Days",
+    desc: "An extended, leisurely tour of Kashmir. Stay in Srinagar, Pahalgam, and Gulmarg, soaking in the beautiful lakes, gardens, and valleys.",
+    highlights: [
+      "Stay in Srinagar, Pahalgam, and Gulmarg",
+      "Scenic Shikara Ride on Dal Lake",
+      "Explore Betaab Valley & Aru Valley"
+    ],
+    inclusions: [
+      "6 Nights stay in selected deluxe hotels",
+      "Daily Breakfast & Dinner",
+      "Private sedan for all transportation",
+      "Local sightseeing in Srinagar, Gulmarg, and Pahalgam",
+      "Driver allowances, toll, and parking fees"
+    ],
+    price: "Price on Request",
+    image: "/Kashmir Delight Package.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Srinagar",
+        description: "Arrive in Srinagar. Transfer to hotel/houseboat. Spend the evening relaxing."
+      },
+      {
+        day: "2",
+        title: "Srinagar Mughal Gardens",
+        description: "Visit Shalimar Bagh, Nishat Bagh, and Chashme Shahi. Enjoy a Shikara ride."
+      },
+      {
+        day: "3",
+        title: "Srinagar to Gulmarg",
+        description: "Drive to Gulmarg. Check-in at your hotel and spend the day exploring the meadows."
+      },
+      {
+        day: "4",
+        title: "Gulmarg Gondola & Activity Day",
+        description: "Take the Gulmarg Gondola ride. Enjoy pony rides or snow activities."
+      },
+      {
+        day: "5",
+        title: "Gulmarg to Pahalgam",
+        description: "Drive to Pahalgam. Pass by the beautiful saffron fields. Evening check-in."
+      },
+      {
+        day: "6",
+        title: "Pahalgam Valley Tour",
+        description: "Visit the local valleys - Aru Valley, Betaab Valley, and Chandanwari."
+      },
+      {
+        day: "7",
+        title: "Pahalgam to Srinagar & Departure",
+        description: "Return to Srinagar and transfer to the airport for departure."
+      }
+    ]
+  },
+  {
+    id: "hong-kong-disneyland",
+    title: "Hong Kong Discovery Package",
+    category: "East Asia",
+    filters: ["All", "International"],
+    duration: "4 Nights / 5 Days",
+    desc: "An exciting family holiday in Hong Kong. Visit Disneyland, explore Ocean Park, and see the giant Tian Tan Buddha.",
+    highlights: [
+      "Full Day Ticket to Hong Kong Disneyland",
+      "Visit Ocean Park Hong Kong",
+      "Ngong Ping 360 Cable Car & Big Buddha"
+    ],
+    inclusions: [
+      "4 Nights stay in a premium hotel",
+      "Daily breakfast at the hotel",
+      "Return airport transfers by coach",
+      "Disneyland & Ocean Park admission tickets",
+      "Half-day Hong Kong city tour"
+    ],
+    price: "Price on Request",
+    image: "/Hong Kong Discovery Package – 4 Nights.webp",
+    itinerary: [
+      {
+        day: "1",
+        title: "Arrival in Hong Kong",
+        description: "Arrive in Hong Kong. Transfer to your hotel. Evening at leisure."
+      },
+      {
+        day: "2",
+        title: "Hong Kong City Tour",
+        description: "Visit Victoria Peak, Aberdeen Fishing Village, Repulse Bay, and Stanley Market."
+      },
+      {
+        day: "3",
+        title: "Hong Kong Disneyland",
+        description: "Spend a magical day at Disneyland, experiencing all the themed lands and evening fireworks."
+      },
+      {
+        day: "4",
+        title: "Ocean Park Excursion",
+        description: "Explore Ocean Park, featuring animal exhibits, roller coasters, and marine shows."
+      },
+      {
+        day: "5",
+        title: "Ngong Ping 360 & Departure",
+        description: "Ride the cable car to Ngong Ping village, see the Big Buddha, and transfer to airport."
+      }
+    ]
   }
 ];

@@ -53,7 +53,7 @@ export default function FeaturedPackages() {
         </div>
 
         {/* Package Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           <AnimatePresence>
             {filteredPackages.map((pkg, index) => (
               <motion.div
@@ -66,7 +66,7 @@ export default function FeaturedPackages() {
                 className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1"
               >
                 {/* Image Section (~55% visual weight) */}
-                <div className="relative h-64 w-full overflow-hidden shrink-0">
+                <div className="relative w-full aspect-video overflow-hidden shrink-0">
                   <Image
                     src={pkg.image}
                     alt={pkg.title}

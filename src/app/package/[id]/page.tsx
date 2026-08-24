@@ -125,9 +125,8 @@ export default async function PackagePage({ params }: { params: Promise<{ id: st
 
                 {/* Pricing Box */}
                 <div className="bg-secondary p-8 rounded-2xl shadow-xl text-center">
-                  <p className="text-sm font-bold text-white/70 uppercase tracking-wider mb-2">Starting Price</p>
-                  <p className="text-3xl font-primary font-bold text-white mb-6">{pkg.price}</p>
-                  <p className="text-xs text-white/70 mb-8">100% bespoke — we tailor pricing to your group & preferences</p>
+                  <p className="text-2xl font-primary font-bold text-white mb-4">Price on Request</p>
+                  <p className="text-sm text-white/80 mb-8">Contact us to receive a custom quote tailored to your travel preferences.</p>
                   
                   <div className="flex flex-col gap-3">
                     <a 

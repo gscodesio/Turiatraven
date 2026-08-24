@@ -7,26 +7,7 @@ import Link from "next/link";
 import { MapPin, ChevronDown } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-const domesticCategories = ["All", "Jammu and Kashmir", "Kerala", "Himachal", "North East"];
-const internationalCategories = ["All", "Asia", "Africa", "Indian Ocean", "Europe", "Oceania"];
-
-const allDestinations = [
-  // Domestic
-  { id: "jammu-kashmir", name: "Srinagar Escapade", region: "Jammu and Kashmir", type: "Domestic", image: "/hero.jpg" },
-  { id: "kerala-backwaters", name: "Munnar Retreat", region: "Kerala", type: "Domestic", image: "/bali.jpg" },
-  { id: "himachal-retreat", name: "Manali Getaway", region: "Himachal", type: "Domestic", image: "/kenya.jpg" },
-  { id: "northeast-tour", name: "Meghalaya Tour", region: "North East", type: "Domestic", image: "/hero.jpg" },
-
-  // International
-  { id: "nepal-highlights", name: "Nepal Highlights", region: "Asia", type: "International", image: "/nepal1.jpg" },
-  { id: "enchanting-nepal", name: "Enchanting Nepal", region: "Asia", type: "International", image: "/nepal2.jpg" },
-  { id: "kenya-safari", name: "Kenya", region: "Africa", type: "International", image: "/kenya.jpg" },
-  { id: "bali-escapade", name: "Bali", region: "Asia", type: "International", image: "/bali.jpg" },
-  { id: "south-africa", name: "South Africa", region: "Africa", type: "International", image: "/hero.jpg" },
-  { id: "sri-lanka", name: "Sri Lanka", region: "Asia", type: "International", image: "/hero.jpg" },
-  { id: "kazakhstan", name: "Kazakhstan", region: "Asia", type: "International", image: "/hero.jpg" },
-  { id: "azerbaijan", name: "Azerbaijan", region: "Europe", type: "International", image: "/kenya.jpg" },
-];
+import { packagesData } from "@/data/packages";
 
 export default function Destinations() {
   const [tourType, setTourType] = useState("International");
@@ -35,6 +16,17 @@ export default function Destinations() {
   useEffect(() => {
     setActiveCategory("All");
   }, [tourType]);
+
+  const allDestinations = packagesData.map(pkg => ({
+    id: pkg.id,
+    name: pkg.title,
+    region: pkg.category,
+    type: pkg.filters.includes("Domestic") ? "Domestic" : "International",
+    image: pkg.image
+  }));
+
+  const domesticCategories = ["All", ...Array.from(new Set(packagesData.filter(p => p.filters.includes("Domestic")).map(p => p.category)))];
+  const internationalCategories = ["All", ...Array.from(new Set(packagesData.filter(p => p.filters.includes("International")).map(p => p.category)))];
 
   const currentCategories = tourType === "Domestic" ? domesticCategories : internationalCategories;
 
@@ -132,7 +124,7 @@ export default function Destinations() {
                     transition={{ duration: 0.4 }}
                     className="group cursor-pointer rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow bg-white"
                   >
-                    <div className="relative h-64 w-full overflow-hidden">
+                    <div className="relative w-full aspect-video overflow-hidden">
                       <Image
                         src={dest.image}
                         alt={dest.name}

@@ -6,6 +6,7 @@ import TrustBar from "@/components/TrustBar";
 import Introduction from "@/components/Introduction";
 import Destinations from "@/components/Destinations";
 import FeaturedPackages from "@/components/FeaturedPackages";
+import TrendingPackages from "@/components/TrendingPackages";
 import Services from "@/components/Services";
 import SignatureExperience from "@/components/SignatureExperience";
 import HowItWorks from "@/components/HowItWorks";
@@ -45,6 +46,7 @@ export default function Home() {
       <Introduction />
       <Destinations />
       <FeaturedPackages />
+      <TrendingPackages />
       <Services />
       <SignatureExperience />
       <HowItWorks />
