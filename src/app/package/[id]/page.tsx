@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, Clock, MessageCircle, MapPin } from "lucide-react";
+import { ArrowLeft, Check, Clock, MessageCircle, MapPin, Plane, X } from "lucide-react";
 import { packagesData } from "@/data/packages";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -110,6 +110,36 @@ export default async function PackagePage({ params }: { params: Promise<{ id: st
                   </ul>
                 </div>
 
+                {/* Flights Details */}
+                {pkg.flights && pkg.flights.length > 0 && (
+                  <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h3 className="text-xl font-bold text-secondary mb-6 flex items-center gap-2">
+                      <Plane size={20} className="text-primary" /> Flight Details
+                    </h3>
+                    <div className="space-y-3">
+                      {pkg.flights.map((flight, i) => {
+                        const parts = flight.split("|");
+                        if (parts.length >= 3) {
+                          return (
+                            <div key={i} className="border-b border-gray-50 pb-3 last:border-0 last:pb-0">
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="font-bold text-sm text-secondary">{parts[0].trim()}</span>
+                                <span className="text-xs font-semibold text-primary">{parts[2].trim()}</span>
+                              </div>
+                              <p className="text-xs text-text-secondary">{parts[1].trim()}</p>
+                            </div>
+                          );
+                        }
+                        return (
+                          <div key={i} className="text-sm text-text-secondary border-b border-gray-50 pb-2 last:border-0 last:pb-0">
+                            {flight}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 {/* Inclusions */}
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
                   <h3 className="text-xl font-bold text-secondary mb-6">What's Included</h3>
@@ -123,14 +153,70 @@ export default async function PackagePage({ params }: { params: Promise<{ id: st
                   </ul>
                 </div>
 
+                {/* Exclusions */}
+                {pkg.exclusions && pkg.exclusions.length > 0 && (
+                  <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                    <h3 className="text-xl font-bold text-secondary mb-6">What's Excluded</h3>
+                    <ul className="space-y-3">
+                      {pkg.exclusions.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-sm text-text-secondary">
+                          <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* Pricing Box */}
-                <div className="bg-secondary p-8 rounded-2xl shadow-xl text-center">
-                  <p className="text-2xl font-primary font-bold text-white mb-4">Price on Request</p>
-                  <p className="text-sm text-white/80 mb-8">Contact us to receive a custom quote tailored to your travel preferences.</p>
+                <div className="bg-secondary p-8 rounded-2xl shadow-xl text-center text-white">
+                  {pkg.pricingDetails ? (
+                    <div className="text-left mb-6">
+                      <p className="text-xs font-bold text-primary uppercase tracking-wider mb-1">Starting from</p>
+                      <p className="text-3xl font-primary font-bold mb-6">{pkg.price}</p>
+                      
+                      <div className="border-t border-white/10 pt-4 space-y-3 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-white/70">Booking Amount:</span>
+                          <span className="font-bold">{pkg.pricingDetails.bookingAmount}</span>
+                        </div>
+                        <div className="flex justify-between border-t border-white/5 pt-2">
+                          <span className="text-white/70">Double Sharing:</span>
+                          <span className="font-bold">{pkg.pricingDetails.doubleShare}</span>
+                        </div>
+                        <div className="flex justify-between border-t border-white/5 pt-2">
+                          <span className="text-white/70">Triple Sharing:</span>
+                          <span className="font-bold">{pkg.pricingDetails.tripleShare}</span>
+                        </div>
+                        <div className="flex justify-between border-t border-white/5 pt-2">
+                          <span className="text-white/70">Child (6-12 yrs):</span>
+                          <span className="font-bold">{pkg.pricingDetails.child6to12}</span>
+                        </div>
+                        <div className="flex justify-between border-t border-white/5 pt-2">
+                          <span className="text-white/70">Child (2-6 yrs):</span>
+                          <span className="font-bold">{pkg.pricingDetails.child2to6}</span>
+                        </div>
+                      </div>
+                      
+                      {pkg.availableDates && pkg.availableDates.length > 0 && (
+                        <div className="border-t border-white/10 pt-4 mt-6">
+                          <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Available Dates</p>
+                          <div className="inline-block bg-white/10 px-3 py-1.5 rounded-lg text-sm font-semibold border border-white/10">
+                            {pkg.availableDates.join(", ")}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <>
+                      <p className="text-2xl font-primary font-bold mb-4">{pkg.price}</p>
+                      <p className="text-sm text-white/80 mb-8">Contact us to receive a custom quote tailored to your travel preferences.</p>
+                    </>
+                  )}
                   
                   <div className="flex flex-col gap-3">
                     <a 
-                      href="https://wa.me/919594992125" 
+                      href={`https://wa.me/919594992125?text=Hi!%20I%20am%20interested%20in%20the%20${encodeURIComponent(pkg.title)}%20package.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full bg-[#25D366] hover:bg-[#1da851] text-white py-4 px-6 rounded-xl flex items-center justify-center gap-2 font-bold transition-all hover:scale-[1.02]"

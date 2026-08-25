@@ -16,6 +16,16 @@ export type Package = {
   price: string;
   image: string;
   itinerary: ItineraryDay[];
+  exclusions?: string[];
+  flights?: string[];
+  pricingDetails?: {
+    bookingAmount: string;
+    doubleShare: string;
+    tripleShare: string;
+    child6to12: string;
+    child2to6: string;
+  };
+  availableDates?: string[];
 };
 
 export const packagesData: Package[] = [
@@ -930,6 +940,118 @@ export const packagesData: Package[] = [
         day: "5",
         title: "Ngong Ping 360 & Departure",
         description: "Ride the cable car to Ngong Ping village, see the Big Buddha, and transfer to airport."
+      }
+    ]
+  },
+  {
+    id: "china-fixed-departure",
+    title: "CHINA Fixed Departure - 10 DAYS JOURNEY",
+    category: "East Asia",
+    filters: ["All", "International"],
+    duration: "8 Nights / 10 Days",
+    desc: "Experience the ultimate 11-day journey through China's most iconic cities: Shanghai, Beijing, Xi'an, Chongqing, and Chengdu. Travel via high-speed bullet trains and witness historical wonders, futuristic skylines, and pandas.",
+    highlights: [
+      "High-Speed Bullet Train experience across multiple cities",
+      "Forbidden City & Great Wall of China (Juyong Pass) in Beijing",
+      "Huangpu River Cruise & Jade Buddha Temple in Shanghai",
+      "World-famous Terracotta Warriors Museum in Xi'an",
+      "Hongya Cave & Liziba Light Rail in mountain city Chongqing",
+      "Giant Panda Breeding Base & Jinli Ancient Street in Chengdu"
+    ],
+    inclusions: [
+      "Return Airfare (Kolkata - Kunming, Kunming - Shanghai, Chengdu - Kunming, Kunming - Kolkata)",
+      "High Speed Bullet trains (Shanghai - Beijing, Beijing - Xi'an, Xi'an - Chongqing, Chongqing - Chengdu)",
+      "08 night's accommodation as per the itinerary based on standard rooms on a B&B basis",
+      "Meals: 08 dinners, 08 Breakfasts as indicated in the itinerary",
+      "Drinking Water - 1 litre per person per day",
+      "Coach tours, transfers, entrance fees, sightseeing, and surface transportation mentioned in itinerary",
+      "Services of Tour Manager"
+    ],
+    exclusions: [
+      "Visa Not Included (China Visa Single Entry fees and procedures: INR 6500 per person)",
+      "Insurance Not Included",
+      "TCS - 2% on the total tour price",
+      "Rate of Exchange for USD = 96.00 (The rate of exchange as of the date of final payment will be applicable)",
+      "Visa requirements: Passport should be valid for 6 months from the date of travel",
+      "Personal expenses like Laundry, wines, telephone charges, Mini-bar at hotel",
+      "Any increase in the airfare, fuel surcharge, and taxes charged by airlines",
+      "Any changes in the currency rate leading to a change in the land arrangements cost",
+      "Any increase in the rate of exchange leading to an increase in land arrangements cost prior to departure",
+      "Cost of extension of the validity or deviation from the route of your air ticket",
+      "Tips: 10 USD per person per day",
+      "Early check-in or late check-out"
+    ],
+    flights: [
+      "MU556 | KOLKATA → KUNMING | 01:10 – 06:20",
+      "MU5823 | KUNMING → SHANGHAI | 10:45 – 13:45",
+      "MU5854 | CHENGDU → KUNMING | 18:35 – 19:55",
+      "MU555 | KUNMING → KOLKATA | 23:35 – 00:10 [NEXT DAY]"
+    ],
+    price: "Starting from ₹199,000",
+    image: "/CHINA Fixed Departure - 10 DAYS JOURNEY.png",
+    pricingDetails: {
+      bookingAmount: "₹50,000",
+      doubleShare: "₹199,000",
+      tripleShare: "₹149,000",
+      child6to12: "₹149,000",
+      child2to6: "₹149,000"
+    },
+    availableDates: ["26 Oct 2026"],
+    itinerary: [
+      {
+        day: "1",
+        title: "Departure from Kolkata",
+        description: "Assemble at Netaji Subhas Chandra Bose International Airport, Kolkata at 22:00 hrs. Complete check-in, immigration and security formalities before boarding China Eastern Airlines Flight MU556 departing at 01:10 hrs (early hours of 27 October) for Kunming. Overnight onboard."
+      },
+      {
+        day: "2",
+        title: "Kolkata - Kunming - Shanghai",
+        description: "Arrive in Kunming at 06:20 hrs and connect to China Eastern Airlines Flight MU5823 departing at 10:45 hrs for Shanghai, arriving at 13:45 hrs. Upon arrival, transfer to Crowne Plaza Shanghai Nanjing Road for check-in. Evening at leisure to explore the nearby shopping district. Dinner & Overnight stay at Crowne Plaza Shanghai Nanjing Road."
+      },
+      {
+        day: "3",
+        title: "Shanghai City Tour",
+        description: "After breakfast, enjoy a full-day city tour covering the Jade Buddha Temple, the classical Yu Garden, and the 88th Floor Observation Deck of Jin Mao Tower for spectacular skyline views. Stroll along The Bund before ending the day with a scenic Huangpu River Cruise, showcasing Shanghai's dazzling illuminated skyline. Dinner & Overnight stay at Crowne Plaza Shanghai Nanjing Road."
+      },
+      {
+        day: "4",
+        title: "Shanghai - Beijing (Bullet Train)",
+        description: "After breakfast, board China's world-famous High-Speed Bullet Train to Beijing. Visit the iconic Tiananmen Square followed by the magnificent Forbidden City (Palace Museum), the former imperial palace of the Ming and Qing Dynasties. Transfer to Crowne Plaza Beijing Lido Hotel for check-in. Dinner & Overnight stay at Crowne Plaza Beijing Lido Hotel."
+      },
+      {
+        day: "5",
+        title: "Beijing City Tour",
+        description: "Visit the legendary Great Wall of China (Juyong Pass) and enjoy breathtaking mountain views. Stop for photographs at the iconic Bird's Nest Olympic Stadium before exploring the magnificent Summer Palace, renowned for its beautiful gardens, Kunming Lake and imperial architecture. Dinner & Overnight stay at Crowne Plaza Beijing Lido Hotel."
+      },
+      {
+        day: "6",
+        title: "Beijing - Xi'an (Bullet Train)",
+        description: "Board the High-Speed Bullet Train to Xi'an. In the evening, visit the famous Giant Wild Goose Pagoda Square (outside view) and enjoy the spectacular Musical Fountain Show before checking in at Crowne Plaza Xi'an Weiyang. Dinner & Overnight stay at Crowne Plaza Xi'an Weiyang."
+      },
+      {
+        day: "7",
+        title: "Xi'an - Chongqing",
+        description: "After breakfast, visit the world-famous Terracotta Warriors & Horses Museum, one of China's greatest archaeological treasures and a UNESCO World Heritage Site. Later, board the High-Speed Bullet Train to Chongqing and transfer to JW Marriott Hotel Chongqing. Dinner & Overnight stay at JW Marriott Hotel Chongqing."
+      },
+      {
+        day: "8",
+        title: "Chongqing City Tour",
+        description: "Explore the fascinating mountain city of Chongqing, visiting Ciqikou Ancient Town, the unique Liziba Light Rail Station, Jiefangbei Pedestrian Street, and the spectacular Hongya Cave, famous for its illuminated riverside architecture and panoramic night views. Dinner & Overnight stay at JW Marriott Hotel Chongqing."
+      },
+      {
+        day: "9",
+        title: "Chongqing - Chengdu (Bullet Train)",
+        description: "Travel by High-Speed Bullet Train to Chengdu. Visit the renowned Chengdu Research Base of Giant Panda Breeding, followed by the historic Jinli Ancient Street and the bustling Chunxi Road & IFS Mall, famous for its giant panda sculpture. Dinner & Overnight stay at Crowne Plaza Chengdu City Center by IHG."
+      },
+      {
+        day: "10",
+        title: "Chengdu - Kunming - Kolkata",
+        description: "After breakfast, enjoy free time until your transfer to the airport. Board China Eastern Airlines Flight MU5854 departing 18:35 hrs for Kunming, arriving at 19:55 hrs. Connect with China Eastern Airlines Flight MU555 departing at 23:35 hrs for Kolkata. Overnight onboard."
+      },
+      {
+        day: "11",
+        title: "Arrival in Kolkata",
+        description: "Arrive at Netaji Subhas Chandra Bose International Airport, Kolkata at 00:10 hrs with unforgettable memories of China's magnificent heritage, iconic landmarks, high-speed rail journeys, vibrant cities and rich cultural experiences. Tour Ends Here!"
       }
     ]
   }
