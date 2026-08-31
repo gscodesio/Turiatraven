@@ -184,7 +184,7 @@ export const packagesData: Package[] = [
       "English-speaking chauffeur guide",
     ],
     price: "Price on Request",
-    image: "/srilanka.jpg", // Sri lanka placeholder
+    image: "/srilanka.png",
     itinerary: [
       {
         day: "1",
