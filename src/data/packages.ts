@@ -235,7 +235,7 @@ export const packagesData: Package[] = [
       "Private airport transfers",
     ],
     price: "Price on Request",
-    image: "/bali.jpg",
+    image: "/bali.png",
     itinerary: [
       {
         day: "1",
