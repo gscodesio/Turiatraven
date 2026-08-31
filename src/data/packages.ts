@@ -92,7 +92,7 @@ export const packagesData: Package[] = [
       "Visa processing assistance",
     ],
     price: "Price on Request",
-    image: "/kenya.jpg", // Baku placeholder
+    image: "/Azerbaijan.png", 
     itinerary: [
       {
         day: "1",
