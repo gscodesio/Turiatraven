@@ -46,7 +46,7 @@ export const packagesData: Package[] = [
       "24/7 concierge support",
     ],
     price: "Price on Request",
-    image: "/hero.jpg", // Almaty placeholder
+    image: "/kazakhstan.png",
     itinerary: [
       {
         day: "1-2",
