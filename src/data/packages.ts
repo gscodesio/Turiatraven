@@ -138,7 +138,7 @@ export const packagesData: Package[] = [
       "Expert ranger guides",
     ],
     price: "Price on Request",
-    image: "/bali.jpg", // Safari placeholder
+    image: "/southafrica.png",
     itinerary: [
       {
         day: "1-2",
