@@ -81,7 +81,7 @@ export default function FeaturedPackages() {
 
                 {/* Content Section */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <span className="text-primary text-xs font-bold uppercase tracking-wider mb-2">
+                  <span className="text-primary text-xs font-bold uppercase tracking-wider mb-2 self-end">
                     {pkg.category}
                   </span>
                   <h4 className="text-2xl font-primary font-bold mb-3">{pkg.title}</h4>

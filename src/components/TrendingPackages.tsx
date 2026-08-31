@@ -66,7 +66,7 @@ export default function TrendingPackages() {
 
               {/* Card Details */}
               <div className="p-5 flex flex-col flex-grow">
-                <span className="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">
+                <span className="text-primary text-[10px] font-bold uppercase tracking-wider mb-1 self-end">
                   {pkg.category}
                 </span>
                 <h4 className="text-lg font-primary font-bold mb-2 text-white group-hover:text-primary transition-colors line-clamp-1">
