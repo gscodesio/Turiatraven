@@ -286,7 +286,7 @@ export const packagesData: Package[] = [
       "Flying Doctors emergency cover",
     ],
     price: "Price on Request",
-    image: "/kenya.jpg",
+    image: "/kenya.png",
     itinerary: [
       {
         day: "1",
