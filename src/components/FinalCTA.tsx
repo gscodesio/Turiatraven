@@ -1,13 +1,50 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-
-
 export default function FinalCTA() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    destination: "",
+    month: "",
+    travellers: "",
+    travelType: "",
+    budget: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    const text = `*New Travel Enquiry!* 🌍\n
+*Name:* ${formData.name || 'N/A'}
+*Phone:* ${formData.phone || 'N/A'}
+*Email:* ${formData.email || 'N/A'}
+*Destination:* ${formData.destination || 'N/A'}
+*Travel Month:* ${formData.month || 'N/A'}
+*Travellers:* ${formData.travellers || 'N/A'}
+*Travel Type:* ${formData.travelType || 'N/A'}
+*Budget:* ${formData.budget || 'N/A'}
+
+*Message:* 
+${formData.message || 'N/A'}`;
+
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/919594992125?text=${encodedText}`, '_blank');
+  };
+
   return (
     <section id="plan" className="relative py-24 bg-secondary text-white overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
@@ -47,6 +84,7 @@ export default function FinalCTA() {
                 WhatsApp Us
               </a>
               <button 
+                onClick={() => document.getElementById('plan')?.scrollIntoView({ behavior: 'smooth' })}
                 className="flex items-center justify-center bg-white text-secondary hover:bg-background-alt px-8 py-4 rounded-lg font-bold transition-colors"
               >
                 Plan My Journey
@@ -68,22 +106,22 @@ export default function FinalCTA() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Name</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your name" />
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your name" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Phone</label>
-                  <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your number" />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your number" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Email</label>
-                  <input type="email" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your email" />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Your email" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Destination</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Where to?" />
+                  <input type="text" name="destination" value={formData.destination} onChange={handleChange} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Where to?" />
                 </div>
               </div>
 
@@ -92,16 +130,19 @@ export default function FinalCTA() {
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Travel Month</label>
                   <input 
                     type="month" 
+                    name="month"
+                    value={formData.month}
+                    onChange={handleChange}
                     className="w-full !h-[50px] bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-secondary" 
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Travellers</label>
-                  <input type="number" min="1" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Enter number" />
+                  <input type="number" name="travellers" value={formData.travellers} onChange={handleChange} min="1" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors" placeholder="Enter number" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Travel Type</label>
-                  <Select>
+                  <Select value={formData.travelType} onValueChange={(val) => handleSelectChange('travelType', val)}>
                     <SelectTrigger className="w-full !h-[50px] bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors shadow-none text-left">
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
@@ -116,7 +157,7 @@ export default function FinalCTA() {
 
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Budget</label>
-                <Select>
+                <Select value={formData.budget} onValueChange={(val) => handleSelectChange('budget', val)}>
                   <SelectTrigger className="w-full !h-[50px] bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors shadow-none text-left">
                     <SelectValue placeholder="Select Budget" />
                   </SelectTrigger>
@@ -133,11 +174,12 @@ export default function FinalCTA() {
 
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Message</label>
-                <textarea rows={3} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Tell us what kind of trip you're imagining..."></textarea>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={3} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Tell us what kind of trip you're imagining..."></textarea>
               </div>
 
               <button 
                 type="button" 
+                onClick={handleSubmit}
                 className="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-secondary transition-colors mt-2 flex items-center justify-center gap-2"
               >
                 Send My Enquiry &rarr;
