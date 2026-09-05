@@ -23,8 +23,8 @@ export default function FinalCTA() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData({ ...formData, [name]: value });
+  const handleSelectChange = (name: string, value: string | null) => {
+    setFormData({ ...formData, [name]: value || "" });
   };
 
   const handleSubmit = () => {
