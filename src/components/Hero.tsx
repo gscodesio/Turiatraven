@@ -1,13 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Search, MapPin, Calendar, Compass } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-
-
 export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: string[] }) {
+  const router = useRouter();
+  const [destination, setDestination] = useState("");
+  const [month, setMonth] = useState("");
+  const [style, setStyle] = useState("");
+
+  const handleSearch = () => {
+    const params = new URLSearchParams();
+    if (destination) params.append("q", destination);
+    if (month) params.append("month", month);
+    if (style && style !== "all") params.append("style", style);
+    
+    router.push(`/search?${params.toString()}`);
+  };
+
   // Generate dynamic logic based on user rules:
   const backgroundVideos = videos.map((src, index) => {
     if (index === 0) return { src, durationMs: 4000, playbackRate: 0.5, startTime: 0 };
@@ -118,6 +131,9 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
                 <input 
                   type="text" 
                   placeholder="e.g. Bali, Kenya..." 
+                  value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                   className="w-full bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold placeholder-gray-300 focus:placeholder-transparent"
                 />
               </div>
@@ -132,6 +148,8 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
                 <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 md:mb-1">When?</p>
                 <input 
                   type="month" 
+                  value={month}
+                  onChange={(e) => setMonth(e.target.value)}
                   className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold shadow-none focus:ring-0 cursor-pointer" 
                 />
               </div>
@@ -144,15 +162,16 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
               </div>
               <div className="flex-1 text-left w-full overflow-hidden">
                 <p className="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5 md:mb-1">Travel Style</p>
-                <Select>
+                <Select value={style} onValueChange={(val) => setStyle(val || "")}>
                   <SelectTrigger className="w-full h-auto p-0 bg-transparent border-none outline-none text-secondary text-sm md:text-base font-bold shadow-none focus:ring-0 hover:bg-transparent [&>svg]:text-gray-400 [&>svg]:h-4 [&>svg]:w-4 overflow-hidden text-ellipsis whitespace-nowrap">
                     <SelectValue placeholder="All Styles" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="women">Women Only</SelectItem>
-                    <SelectItem value="family">Family Retreat</SelectItem>
-                    <SelectItem value="safari">Wildlife Safari</SelectItem>
-                    <SelectItem value="honeymoon">Honeymoon</SelectItem>
+                    <SelectItem value="all">All Styles</SelectItem>
+                    <SelectItem value="Women's Special">Women Only</SelectItem>
+                    <SelectItem value="Family">Family Retreat</SelectItem>
+                    <SelectItem value="Safari">Wildlife Safari</SelectItem>
+                    <SelectItem value="Honeymoon">Honeymoon</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -160,7 +179,10 @@ export default function Hero({ videos = ["/videos/video1.mp4"] }: { videos?: str
 
             {/* Search Button */}
             <div className="md:w-auto flex items-stretch p-2">
-              <button className="w-full md:w-auto h-full px-6 py-2.5 sm:py-3 md:px-8 md:py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-md shadow-primary/30 flex items-center justify-center gap-2">
+              <button 
+                onClick={handleSearch}
+                className="w-full md:w-auto h-full px-6 py-2.5 sm:py-3 md:px-8 md:py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-md shadow-primary/30 flex items-center justify-center gap-2"
+              >
                 <Search size={20} className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-sm md:text-base">Search</span>
               </button>
